@@ -1,0 +1,74 @@
+<div class="footer">
+    <div class="container">
+        <div class="wrap xl-gutter-24 xl-5 xl-top lg-gutter-0 md-5 md-center sm-2">
+            <div class="col">
+                <p class="footer-title">Hosting</p>
+                <ul class="footer-menu">
+                    <li><a href="#!">Web Hosting</a></li>
+                    <li><a href="#!">Domain</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p class="footer-title">Clients</p>
+                <ul class="footer-menu">
+                    <li><a href="#!">Client Login</a></li>
+                    <li><a href="#!">Register</a></li>
+                    <li><a href="#!">Reset Password</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p class="footer-title">Support</p>
+                <ul class="footer-menu">
+                    <li><a href="#!">Knowledgebase</a></li>
+                    <li><a href="#!">Submit Ticket</a></li>
+                    <li><a href="#!">Announcements</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p class="footer-title">Legal</p>
+                <ul class="footer-menu">
+                    <li><a href="#!">Terms of Service</a></li>
+                    <li><a href="#!">Privacy Policy</a></li>
+                    <li><a href="#!">Report Abuse</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p class="footer-title">Social</p>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="https://www.facebook.com/preschian.febryantara" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <br>
+                <a href="https://twitter.com/preschian" class="twitter-follow-button" data-show-count="false">Follow @preschian</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-sub">
+    <div class="container">
+        &copy; 2013 - 2015 preschian.com All Rights Reserved.
+    </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+    $(function() {
+        if ( $( 'body' ).width() <= 768 )
+            $( 'body' ).append( '<div class="menu-bg menu-hidden"></div>' ).append( '<div class="menu-action">Menu</div>' );
+
+        $( '.menu-action' ).on( 'click', function() {
+            $( '.menu' ).toggleClass( 'menu-open' );
+            $( '.menu-bg' ).toggleClass( 'menu-bg-open' );
+        });
+    });
+</script>
+</body>
+
+</html>

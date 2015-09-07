@@ -1,0 +1,429 @@
+@import 'bourbon/bourbon';
+@import url(sanitize.css);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round|Source+Sans+Pro:400,700|Titillium+Web:400,700);
+
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Titillium Web', sans-serif;
+// font-family: 'Varela Round', sans-serif;
+
+$red        : #cf1f1f;
+$grey       : #dcdcdc;
+$green      : #5cb85c;
+$yellow     : #ffaa00;
+
+@mixin breakpoint($class) {
+    @if $class == sm {
+        @media (max-width: 667px) { @content; }
+    }
+    @else if $class == md {
+        @media (max-width: 768px) { @content; }
+    }
+    @else if $class == lg {
+        @media (max-width: 1024px) { @content; }
+    }
+    @else {
+        @warn "Breakpoint mixin supports: sm, md, lg";
+    }
+}
+
+a {
+    color: inherit;
+    @include transition-duration(0.4s);
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+body {
+    background-color: $grey;
+    font-family: 'Varela Round', sans-serif;
+}
+
+strong {
+    color: $yellow;
+}
+
+ul.list-inline {
+    list-style: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @include breakpoint(lg) {
+        padding: 0 1rem;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+%titilium {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+
+
+/*==========================================
+=            generate class \o/            =
+==========================================*/
+
+.fitur {
+    background: linear-gradient(rgba(black, 0.2), rgba(black, 1)), url(../img/bg2.jpg);
+    background-position: top center;
+    background-size: cover;
+    color: white;
+    padding: 3rem 0;
+    @extend %titilium;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    i {
+        line-height: 64px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .col {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .fitur-judul {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    @include breakpoint(sm) {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .fitur-judul {
+            font-size: 1rem;
+        }
+    }
+}
+
+.footer {
+    background-color: lighten(black, 3%);
+    color: white;
+    padding: 2rem 0;
+
+    .footer-title {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .footer-menu {
+        color: darken(white, 50%);
+        font-size: 14px;
+        list-style: none;
+    }
+
+    @include breakpoint(sm) {
+        .footer-menu {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.footer-sub {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.header {
+    background-color: black;
+    padding: 1rem 0;
+
+    li {
+        color: white;
+    }
+
+    li ~ li {
+        margin-left: 2rem;
+    }
+
+    @include breakpoint(lg) {
+        li ~ li {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.header-bot {
+    background: linear-gradient(rgba(black, 0.4), rgba(black, 0.8)), url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    padding: 4rem 0;
+
+    h1 {
+        color: $yellow;
+        font-size: 2.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        @extend %titilium;
+    }
+
+    p {
+        @extend %titilium;
+    }
+
+    .uptime {
+        background-color: white;
+        border-radius: 4px;
+        color: black;
+        padding: 1rem;
+        text-align: center;
+        @include transition-duration(0.4s);
+
+        span {
+            border-bottom: 2px solid black;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: -1rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $yellow;
+        }
+    }
+
+    @include breakpoint(sm) {
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.header-top {
+    background-color: white;
+
+    ul {
+        margin: 0.5rem 0;
+    }
+
+    li {
+        font-size: 14px;
+    }
+
+    li ~ li {
+        margin-left: 2rem;
+    }
+}
+
+.paket {
+    padding: 2rem 0;
+    @extend %titilium;
+
+    .paket-list {
+        background-color: black;
+        box-shadow: 0px 1px 1px white;
+        color: white;
+        position: relative;
+        text-align: center;
+
+        a {
+            background-color: $yellow;
+            display: block;
+            font-size: 1.2rem;
+            padding: 8px 0;
+            text-transform: uppercase;
+
+            &:hover {
+                color: inherit;
+                background-color: darken($yellow, 40%);
+            }
+        }
+
+        p {
+            line-height: 2;
+        }
+
+        p:nth-child(even) {
+            background-color: lighten(black, 3%);
+        }
+    }
+
+    .paket-judul {
+        display: block;
+        font-size: 1.5rem;
+        padding: 8px 0;
+        text-transform: uppercase;
+    }
+
+    .paket-harga {
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        p {
+            display: inline-block;
+            font-size: 3rem;
+            line-height: 32px;
+            vertical-align: top;
+        }
+
+        span {
+            display: inline-block;
+            line-height: 1;
+            text-align: left;
+        }
+    }
+
+    .paket-popular {
+        background-color: $green;
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 10px;
+        margin-bottom: 1rem;
+        padding: 4px 8px;
+        text-transform: uppercase;
+
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    @include breakpoint(sm) {
+        .col ~ .col .paket-list {
+            margin-top: 1rem;
+        }
+
+        .paket-list a {
+            font-size: 1rem;
+            padding: 4px 0;
+        }
+
+        .paket-popular {
+            display: none;
+        }
+    }
+
+    @include breakpoint(md) {
+        .paket-judul, .paket-list a {
+            font-size: 1rem;
+        }
+
+        .paket-popular {
+            top: 8px;
+            right: 8px;
+        }
+    }
+}
+
+.promo {
+    background-color: $red;
+    color: white;
+
+    a {
+        background-color: black;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 38px;
+        padding: 4px 8px;
+    }
+
+    p {
+        font-size: 20px;
+        padding: 4px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    @include breakpoint(sm) {
+        p {
+            font-size: 1rem;
+        }
+
+        a {
+            font-size: 14px;
+        }
+    }
+}
+
+@include breakpoint(md) {
+    body {
+        margin-bottom: 2.5rem;
+    }
+
+    .menu {
+        background-color: black;
+        padding: 0.5rem 0;
+        z-index: 2;
+        @include position(fixed, null 0 -100% 0);
+        @include transition-duration(0.6s);
+
+        a {
+            display: block;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        li {
+            display: block !important;
+        }
+
+        li ~ li {
+            margin-left: 0;
+        }
+
+        &.menu-open {
+            bottom: 2.5rem;
+        }
+    }
+
+    .menu-action {
+        background-color: $red;
+        color: white;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        z-index: 2;
+        @include position(fixed, null 0 0 0);
+    }
+
+    .menu-bg {
+        background-color: rgba(black, 0.8);
+        z-index: 1;
+        @include position(fixed, -100% 0 100% 0);
+        @include transition-duration(0.6s);
+
+        &.menu-bg-open {
+            top: 0;
+            bottom: 0;
+        }
+    }
+}
